@@ -1,0 +1,18 @@
+h1 {
+  font-size: 35px;
+}
+
+body {
+  min-width: 600px;
+  overflow-x: hidden;
+}
+
+a {
+  font-family: 'Sacramento', cursive;
+  color: black;
+  text-decoration: none; 
+}
+
+a:hover{
+  text-decoration: none; 
+}
