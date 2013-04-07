@@ -1,82 +1,29 @@
 $(document).ready(function() {
-
-  // id and user variables to be passed into the API 
-  var id, user, search;
-
-  // get tags 
-  var tag = new Array();
-
   // get background page
-  var bkg = chrome.extension.getBackgroundPage();
-<<<<<<< HEAD
-  var tumblr = require('tumblr.js');
-  var client = tumblr.createClient({
-  	consumer_key: 'AcHybTTrgYoIk1a5HiBDGKvE0TEon8JeRxjF2LJnl4tkR1jlVX',
-  	consumer_secret: 'D8Ff3FoSb65tFM2ubQLPgw358bhFyx1k5PUn4CBHshs4KWW89L',
-  	token: 'http://www.tumblr.com/oauth/request_token',
-  	token_secret: '<oauth token secret>'
-	});
-  
+  //var bkg = chrome.extension.getBackgroundPage();
+
 
   $('body').click(function(e){
-<<<<<<< HEAD
     alert(bkg.getId());
     alert(bkg.getUser());
-    var dat = client.posts(bkg.getUser(), {id:bkg.getId()}, function(json){
-    	var getTags = JSON.parse(dat);
-	getTags = getTags.tags;
-	for (var i = 0; i < getTags.length; i++){
-		//do something with our tags
-	}
-    
-    });
-    
-  })
-=======
-    id = bkg.getId();
-    user = bkg.getUser();
-    search = bkg.getSearch();
->>>>>>> ba5a30afac18bc0c903b0e80222714326f93d20e
-=======
-
-  $('body').click(function(e){
-    id = bkg.getId();
-    user = bkg.getUser();
-    search = bkg.getSearch();
->>>>>>> ba5a30afac18bc0c903b0e80222714326f93d20e
-
-
-    // get the pair of id and user name. use the pair to make ajax requests to API 
-    // and get back tags. Also get search terms and use them as well.
-    for(var i = 0; i < id.length; i++){
-      alert("The " + (i+1) + " post has id " + id[0] + " and user: " + user[0]);
-    }
-
-    for(var i = 0; i < search.length; i++){
-      alert("The " + (i+1) + " search term is " + search[i]);
-    }
-
-    // Once you get tags then convert them to point values
-    // i.e. psuedocode:
-      // getTags = get tags from API with user name and id 
-      // for EACH in getTags
-
-        // tags[i] = getTags 
-
-        //  assign point value
-        // use jquery to update popup.html
-
-        // stat category value += point value
-        // use jquery to update stats in popup.html 
-
-        // check for level up
-        // use jquery to update level in popup.html 
-        // use jquery to update title in popup.html
-
-      // END
-
-
-    
   });
 
+	//fade-in and out of UI dashboards
+  $('#start-tracking').click(function(){
+		$('#start').fadeOut(500, function(){ });
+		$('#stats').delay(600).fadeIn(500);
+	});
+
+  $('#export-data').click(function(){
+		$('#stats').fadeOut(500, function(){ });
+		$('#exported').delay(600).fadeIn(500);
+	});
+
+	//renders user story on #stats and #exported
+  var story = "<div id='story'><h2 id='user-story'>Your Story</h2><p id='story-body'>Once, there was a tumblr user called USERNAME who decided to go on a/n TOP_TAG adventure. First, they visited the city FIRST_TAG where they wandered the streets and bought equipment. Then, they found that there was trouble in FIRST_TAG - the evil SECOND_TAG was destroying all of the FIRST_TAG_STUFF. USERNAME vowed to save the city and rode out to fight SECOND_TAG. THIRD_TAG. With the powers of HIGHEST_STAT and FOURTH_TAG, USERNAME and THIRD_TAG took down SECOND_TAG and saved FIRST_TAG.</p></div><!--story-->";
+
+  $('#stats').append(story);
+  $('#exported').append(story);
+
 });
+
