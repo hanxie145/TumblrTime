@@ -8,6 +8,7 @@ $(document).ready(function() {
 
   // get background page
   var bkg = chrome.extension.getBackgroundPage();
+<<<<<<< HEAD
   var tumblr = require('tumblr.js');
   var client = tumblr.createClient({
   	consumer_key: 'AcHybTTrgYoIk1a5HiBDGKvE0TEon8JeRxjF2LJnl4tkR1jlVX',
@@ -32,6 +33,13 @@ $(document).ready(function() {
     
   })
 =======
+    id = bkg.getId();
+    user = bkg.getUser();
+    search = bkg.getSearch();
+>>>>>>> ba5a30afac18bc0c903b0e80222714326f93d20e
+=======
+
+  $('body').click(function(e){
     id = bkg.getId();
     user = bkg.getUser();
     search = bkg.getSearch();
