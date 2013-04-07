@@ -96,6 +96,12 @@ header{
 	background: -webkit-linear-gradient(top,#6AA5CF 0,#5791BB 100%);
 }
 
+#submit-text:hover, #submit-text:active{
+	position: relative;
+	top: 2px;
+	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#3A996A),color-stop(100%,#277951));
+}
+
 /* STARTING PAGE */
 
 #login, #start, #stats, #exported{
@@ -192,6 +198,7 @@ header{
 #title p{
 	color: #a26fbc;
 	font-weight: bold;
+	border-bottom: 1px solid #D7D7D7;
 }
 
 #user-rank{
@@ -200,7 +207,7 @@ header{
 	display: block;
 	width: 150px;
 	border-right: 1px solid #D7D7D7;
-	height: 192px;
+	height: 193px;
 	background: -webkit-linear-gradient(top,rgba(0, 0, 0, .03),rgba(0, 0, 0, .01) 90%,transparent 100%) no-repeat;
 }
 

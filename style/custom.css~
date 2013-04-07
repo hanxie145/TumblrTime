@@ -192,6 +192,7 @@ header{
 #title p{
 	color: #a26fbc;
 	font-weight: bold;
+	border-bottom: 1px solid #D7D7D7;
 }
 
 #user-rank{
@@ -200,7 +201,7 @@ header{
 	display: block;
 	width: 150px;
 	border-right: 1px solid #D7D7D7;
-	height: 190px;
+	height: 193px;
 	background: -webkit-linear-gradient(top,rgba(0, 0, 0, .03),rgba(0, 0, 0, .01) 90%,transparent 100%) no-repeat;
 }
 
