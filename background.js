@@ -8,6 +8,9 @@ var user = new Array();
 // search is an array that stores a seperate list of all search terms the user has used
 var search = new Array();
 
+// stat variables 
+var cattiness = 0, foodiness = 0, intellectual = 0, hipsterness = 0
+
 chrome.extension.onMessage.addListener(
         function(request, sender, sendResponse){
         if(request.id != null){
@@ -16,7 +19,6 @@ chrome.extension.onMessage.addListener(
         }
         if(request.search != null){
           search.push(request.search);
-          alert(search);
         }
       }
 )
@@ -36,6 +38,47 @@ function getUser(){
 function getSearch(){
   return search;
 }
+
+function getCattiness(){
+  return cattiness;
+}
+
+function getIntellectual(){
+  return intellectual;
+}
+
+function getHipsterness(){
+  return hipsterness;
+}
+
+function getFoodiness(){
+  return foodiness;
+}
+
+function setCattiness(value){
+  cattiness = value;
+}
+
+function setIntellectual(value){
+  intellectual = value;
+}
+
+function setHipsterness(value){
+  hipsterness = value;
+}
+
+function setFoodiness(value){
+  foodiness = value;
+}
+
+
+
+
+
+
+
+
+
 
 
 //makes sure user is on the right page

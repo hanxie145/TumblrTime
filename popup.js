@@ -4,13 +4,10 @@ $(document).ready(function() {
 
 /*
   $('body').click(function(e){
-    alert(bkg.getId());
-    alert(bkg.getUser());
   });
 */
 
 //	var tracking = localStorage.startedTracking;
-//	alert(tracking);
 
 //	if (tracking){
 //		$('#start').css('display', 'none');
@@ -63,6 +60,7 @@ $(document).ready(function() {
 	});
 
 	//renders user story on #stats and #exported
+<<<<<<< HEAD
 	var storyhead = "<div id='story'><h2 id='user-story'>Your Story</h2><p id='story-body'>";
 	var story1 = "Once, there was a tumblr user called " + username;
 	var story2 = " who decided to go on a " + TOP_TAG + " adventure.";
@@ -80,6 +78,21 @@ $(document).ready(function() {
 
   $('#stats').append(story);
   $('#exported').append(story);
+=======
+  var storyhead = "<div id='story'><h2 id='user-story'>Your Story</h2><p id='story-body'>";
+  var story1 = "Once, there was a tumblr user called " + username;
+  var story2 = " who decided to go on a " + TOP_TAG + " adventure.";
+  var story3 = " First, they visited the city " + FIRST_TAG;
+  var story4 = " where they wandered the streets and bought equipment. Then, they found that there was trouble in " + FIRST_TAG;
+  var story5 = " - the evil " + SECOND_TAG + " was destroying all of the " + FIRST_TAG_STUFF;
+  var story6 = ". " + username[0].toUpperCase() + username.slice(1) + " vowed to save the city and rode out to fight " + SECOND_TAG; 
+  var story7 = ". " + THIRD_TAG[0].toUpperCase() + THIRD_TAG.slice(1) + ", With the powers of " + HIGHEST_STAT + " and " + FOURTH_TAG;
+  var story8 = ", " + username + " and " + THIRD_TAG + " took down " + SECOND_TAG + " and saved " + FIRST_TAG + "."
+  var storytail = "</p></div><!--story-->";
+
+  var story = storyhead + story1 + story2 + story3 + story4 + story5 + story6 + story7 + story8 + storytail;
+ /* var story = "Once, there was a tumblr user called USERNAME who decided to go on a/n TOP_TAG adventure. First, they visited the city FIRST_TAG where they wandered the streets and bought equipment. Then, they found that there was trouble in FIRST_TAG - the evil SECOND_TAG was destroying all of the FIRST_TAG_STUFF. USERNAME vowed to save the city and rode out to fight SECOND_TAG. THIRD_TAG, With the powers of HIGHEST_STAT and FOURTH_TAG, USERNAME and THIRD_TAG took down SECOND_TAG and saved FIRST_TAG.</p></div><!--story-->"; */
+>>>>>>> 61f8e6752ae2375762c517abb25562af99823829
 
 });
 
@@ -102,6 +115,17 @@ $(document).ready(function() {
 
   $('body').click(function(e){
 
+    foodiness = bkg.getFoodiness();
+    $('#foodiness').html("Foodiness " + foodiness.toString());
+    cattiness = bkg.getCattiness(); 
+    $('#cattiness').html("Cattiness " + cattiness.toString());
+    intellectual = bkg.getIntellectual();
+    $('#intellectual').html("Intellectual " + intellectual.toString());
+    hipsterness = bkg.getHipsterness();
+    $('#hipsterness').html("Hipsterness " + hipsterness.toString());
+
+
+
     id = bkg.getId(); 
     user = bkg.getUser();
     search = bkg.getSearch();
@@ -109,7 +133,6 @@ $(document).ready(function() {
     // get the pair of id and user name. use the pair to make ajax requests to API 
     // and get back tags. Also get search terms and use them as well.
     for(var i = 0; i < id.length; i++){
-      alert("The " + (i+1) + " post has id " + id[i] + " and user: " + user[i]);
       if(id[i] == 47360923253){
         tag.push("foodiness");
       }
@@ -171,37 +194,39 @@ $(document).ready(function() {
         tag.push("intellectual");
       }
       delete(id[i]);
-      alert(tag);
      }
 
     for(var i = 0; i < search.length; i++){
-      alert("The " + (i+1) + " search term is " + search[i]);
     }
 
     // Once you get tags then convert them to point values
     // i.e. psuedocode:
     for(var i = 0; i < tag.length; i++){
       if(tag[i] === "foodiness"){
-        foodiness += 5;
-        alert("foodiness is " + foodiness);
+        foodiness = bkg.getFoodiness();
+        foodiness += 5
+        bkg.setFoodiness(foodiness);
         $('#foodiness').html("Foodiness " + foodiness.toString());
         delete(tag[i]);
       }
       if(tag[i] === "cattiness"){
+        cattiness = bkg.getCattiness(); 
         cattiness += 8;
-        alert("cattiness is " + cattiness);
+        bkg.setCattiness(cattiness);
         $('#cattiness').html("Cattiness " + cattiness.toString());
         delete(tag[i]);
       }
       if(tag[i] === "intellectual"){
+        intellectual = bkg.getIntellectual();
         intellectual += 7;
-        alert("intellectual is " + intellectual);
+        bkg.setIntellectual(intellectual);
         $('#intellectual').html("Intellectual " + intellectual.toString());
         delete(tag[i]);
       }
       if(tag[i] === "hipsterness"){
+        hipsterness = bkg.getHipsterness();
         hipsterness += 4;
-        alert("hipsterness is " + hipsterness);
+        bkg.setHipsterness(hipsterness);
         $('#hipsterness').html("Hipsterness " + hipsterness.toString());
         delete(tag[i]);
       }
