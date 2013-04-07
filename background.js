@@ -1,11 +1,16 @@
-var id, user; 
+var id[], user[], search[]; 
 
 
 chrome.extension.onMessage.addListener(
         function(request, sender, sendResponse){
-        user = request.user;
-        id = request.id;
+        if(request.user && request.id){
+          user.push(request.user);
+          id.push(request.id);
         }
+        if(request.search){
+          search.push(request.search);
+        }
+      }
 )
 
 function getId(){
@@ -14,4 +19,8 @@ function getId(){
 
 function getUser(){
   return user;
+}
+
+function getSearch(){
+  return search;
 }

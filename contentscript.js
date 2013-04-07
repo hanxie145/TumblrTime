@@ -21,6 +21,8 @@ $(document).ready(function() {
     alert(id);
     var user = $(this).attr('data-tumblelog-name');
     alert(user);
+
+    chrome.extension.sendMessage({"id" : id, "user": user});
   });
 
   // clicking image thumbnail
@@ -33,6 +35,8 @@ $(document).ready(function() {
     alert(id);
     var user = $('#post_'+id+ ' .reblog_button').attr('data-tumblelog-name');
     alert(user);
+
+    chrome.extension.sendMessage({"id" : id, "user": user});
   });
 
   // create post
@@ -47,6 +51,8 @@ $(document).ready(function() {
     if(e.which == 13) {
         var value = $("#search_query").val();
         alert(value);
+
+    chrome.extension.sendMessage({"search" : value});
     }
   });
 

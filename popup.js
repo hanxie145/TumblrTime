@@ -4,8 +4,9 @@ $(document).ready(function() {
 
 
   $('body').click(function(e){
-    alert(bkg.getId());
+    console.log(bkg.getId());
     alert(bkg.getUser());
+    alert(bkg.getSearch());
   })
 
 });
