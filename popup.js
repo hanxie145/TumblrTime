@@ -14,7 +14,7 @@ $(document).ready(function() {
   $('body').click(function(e){
     alert(bkg.getId());
     alert(bkg.getUser());
-    var dat = client.posts(bkg.getUser(), id = bkg.getId(), function(json){
+    var dat = client.posts(bkg.getUser(), {id:bkg.getId()}, function(json){
     	var getTags = JSON.parse(dat);
 	getTags = getTags.tags;
 	for (var i = 0; i < getTags.length; i++){
