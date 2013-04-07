@@ -8,15 +8,33 @@ $(document).ready(function() {
     alert(bkg.getUser());
   });
 
+//	var tracking = localStorage.startedTracking;
+//	alert(tracking);
+
+//	if (tracking){
+//		$('#start').css('display', 'none');
+//		$('#stats').css('display', 'block');
+//	}
+
+	var tracking = chrome.extension.getBackgroundPage().isTracking;
+
+
+if (tracking){
+		$('#start').css('display', 'none');
+		$('#stats').css('display', 'block');
+	}	
 	//fade-in and out of UI dashboards
   $('#start-tracking').click(function(){
 		$('#start').fadeOut(500, function(){ });
 		$('#stats').delay(600).fadeIn(500);
+		chrome.extension.getBackgroundPage().isTracking = true;
+
 	});
 
   $('#export-data').click(function(){
 		$('#stats').fadeOut(500, function(){ });
 		$('#exported').delay(600).fadeIn(500);
+		chrome.extension.getBackgroundPage().isTracking = false;
 	});
 
 	//renders user story on #stats and #exported
@@ -27,7 +45,7 @@ $(document).ready(function() {
 
 });
 
-/* Here is random stuff that was in popup.js before your push. 
+
 $(document).ready(function() {
 
   // id and user variables to be passed into the API 
@@ -53,7 +71,7 @@ $(document).ready(function() {
       $.ajax({
 	url: 'http://api.tumblr.com/v2/blog/'+user[i]+'.tumblr.com/posts?api_key=AcHybTTrgYoIk1a5HiBDGKvE0TEon8JeRxjF2LJnl4tkR1jlVX&id='+id[i],
     	dataType: 'jsonp',  // You  need to use 'jsonp' here because it is cross domain request 
-    	success: alert(response.posts.tags);
+    	success: alert(response.posts.tags)
 	});
       
       //url = 'http://api.tumblr.com/v2/blog/'+user[i]+'.tumblr.com/posts?api_ke//y=AcHybTTrgYoIk1a5HiBDGKvE0TEon8JeRxjF2LJnl4tkR1jlVX&id='+id[i];
@@ -89,7 +107,7 @@ $(document).ready(function() {
     
   });
 
-}); */
+}); 
 
 
 

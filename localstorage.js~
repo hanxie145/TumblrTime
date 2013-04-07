@@ -24,4 +24,4 @@
     }
     </script></p>      -->             */
 
-s
+	chrome.storage.local.set({'startedTracking': false});

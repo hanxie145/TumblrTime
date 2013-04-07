@@ -67,5 +67,6 @@ $(document).ready(function() {
     }
   });
 
+	localStorage["startTracking"]=false;
  
 });
