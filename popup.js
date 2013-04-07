@@ -89,7 +89,6 @@ $(document).ready(function() {
     $.getJSON('jQuery/url here') , {userID : id} ,
         function(output) {
           $('#user').html(popup.html).show();
-
         } 
       // getTags = get tags from API with user name and id 
       // for EACH in getTags
