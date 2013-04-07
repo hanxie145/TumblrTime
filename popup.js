@@ -8,48 +8,28 @@ $(document).ready(function() {
 
   // get background page
   var bkg = chrome.extension.getBackgroundPage();
-<<<<<<< HEAD
-  var tumblr = require('tumblr.js');
-  var client = tumblr.createClient({
-  	consumer_key: 'AcHybTTrgYoIk1a5HiBDGKvE0TEon8JeRxjF2LJnl4tkR1jlVX',
-  	consumer_secret: 'D8Ff3FoSb65tFM2ubQLPgw358bhFyx1k5PUn4CBHshs4KWW89L',
-  	token: 'http://www.tumblr.com/oauth/request_token',
-  	token_secret: '<oauth token secret>'
-	});
-  
 
-  $('body').click(function(e){
-<<<<<<< HEAD
-    alert(bkg.getId());
-    alert(bkg.getUser());
-    var dat = client.posts(bkg.getUser(), {id:bkg.getId()}, function(json){
-    	var getTags = JSON.parse(dat);
-	getTags = getTags.tags;
-	for (var i = 0; i < getTags.length; i++){
-		//do something with our tags
-	}
-    
-    });
-    
-  })
-=======
-    id = bkg.getId();
-    user = bkg.getUser();
-    search = bkg.getSearch();
->>>>>>> ba5a30afac18bc0c903b0e80222714326f93d20e
-=======
+  var url;
 
   $('body').click(function(e){
     id = bkg.getId();
     user = bkg.getUser();
     search = bkg.getSearch();
->>>>>>> ba5a30afac18bc0c903b0e80222714326f93d20e
-
 
     // get the pair of id and user name. use the pair to make ajax requests to API 
     // and get back tags. Also get search terms and use them as well.
     for(var i = 0; i < id.length; i++){
-      alert("The " + (i+1) + " post has id " + id[0] + " and user: " + user[0]);
+      alert("The " + (i+1) + " post has id " + id[i] + " and user: " + user[i]);
+      $.ajax({
+	url: 'http://api.tumblr.com/v2/blog/'+user[i]+'.tumblr.com/posts?api_key=AcHybTTrgYoIk1a5HiBDGKvE0TEon8JeRxjF2LJnl4tkR1jlVX&id='+id[i],
+    	dataType: 'jsonp',  // You  need to use 'jsonp' here because it is cross domain request 
+    	success: alert(response.posts.tags);
+	});
+      
+      /*url = 'http://api.tumblr.com/v2/blog/'+user[i]+'.tumblr.com/posts?api_key=AcHybTTrgYoIk1a5HiBDGKvE0TEon8JeRxjF2LJnl4tkR1jlVX&id='+id[i];
+      $.getJSON(url, function(data){
+	  	tags =     
+	 })*/
     }
 
     for(var i = 0; i < search.length; i++){
@@ -80,3 +60,6 @@ $(document).ready(function() {
   });
 
 });
+
+
+
