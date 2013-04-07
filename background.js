@@ -10,7 +10,7 @@ var search = new Array();
 
 chrome.extension.onMessage.addListener(
         function(request, sender, sendResponse){
-        if(request.user != null && request.id != null){
+        if(request.id != null){
           user.push(request.user);
           id.push(request.id);
         }
