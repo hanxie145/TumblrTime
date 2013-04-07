@@ -1,0 +1,24 @@
+ var names = [5];
+    names[5] = prompt("New name?");
+        localStorage["names"] = JSON.stringify(names);
+       document.write(names[5]);
+
+    /*
+<!--<p><textarea id="persisted-text" rows="5" cols="50"></textarea><br>
+    <script>
+    function localstorage()
+            {
+                localStorage["names"] = JSON.stringify('names');
+                if (window.localStorage) {
+                var p = document.querySelector('#persisted-text');
+                if (localStorage.text == null) {
+                localStorage.text = p.value = supported;
+                } else {
+        p.value = localStorage.text;
+        }
+    p.addEventListener('keyup', function(){ localStorage.text = p.value; }, false);
+    } else {
+        document.getElementById('persisted-text').value = unsupported;
+        }
+    }
+    </script></p>      -->             */
