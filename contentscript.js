@@ -5,6 +5,8 @@ $(document).ready(function() {
     alert("clicked like button");
     var id = $(this).attr('data-root-post-id');
     alert(id);
+
+    // get li element with post id then anchor tag with .reblog_button
     var user = $('#post_'+id+ ' .reblog_button').attr('data-tumblelog-name');
     alert(user);
 
