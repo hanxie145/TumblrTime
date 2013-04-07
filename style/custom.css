@@ -2,7 +2,7 @@
 
 
 body {
-	min-width: 500px;
+	width: 620px;
 	min-height: 300px;
 	overflow-x: hidden;
 	background-color: #2C4762;
@@ -36,15 +36,28 @@ a:hover, a:active{
 	padding: 10px;
 }
 
+header{
+	width: 200px;
+	position: relative;
+	margin: 0px auto;
+}
+
 #logo{
 	color: white;
-	text-align: center;
+	text-align: left;
 	margin: 5px 0px;
+}
+
+#logo-img{
+	position: absolute;
+	top: 0px;
+	right: -15px;
+	-webkit-transform: rotate(30deg);
 }
 
 /* STARTING PAGE */
 
-#start, #stats{
+#start, #stats, #exported{
 	background-color: white;
 	padding: 0px;
 	-webkit-border-radius: 6px;
@@ -55,13 +68,13 @@ a:hover, a:active{
 
 #start{
 	display: block;
-	width: 200px;
-	min-height: 150px;
+	width: 600px;
+	min-height: 180px;
 	padding: 10px 0px;
 }
 
 /*avatar for both #start and #stats */
-#avatar{
+.avatar{
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
@@ -70,7 +83,7 @@ a:hover, a:active{
 	display: block;
 }
 
-#start #avatar{
+#start .avatar{
 	float: none;
 	clear: both;
 	margin: 5px auto;
@@ -79,24 +92,33 @@ a:hover, a:active{
 
 /* STATS PAGE */
 
-#stats #avatar{
+#stats .avatar{
 	float: left;
 	clear: both;
-	margin: 0px 0px 5px 10px;
+	margin: 0px 0px 5px 35px;
 }
 
 #stats{
 	display: none;
-	width: 500px;
-	min-height: 300px;
+	width: 600px;
+	min-height: 250px;
 }
 
-#username{
+#user-rank .username{
 	float: left;
 	clear: both;
 	margin: 0px;
-	padding: 5px 0px 10px 10px;
+	padding: 5px 0px 10px 35px;
 	border-bottom: 1px solid #D7D7D7;
+	width: 115px;
+}
+
+#start .username{
+	float: none;
+	clear: both;
+	margin: 0px auto;
+	text-align: center;
+	padding: 5px 0px;
 	width: 140px;
 }
 
@@ -117,20 +139,33 @@ a:hover, a:active{
 	width: 140px;
 }
 
+#title p, #level p{
+	display: inline;
+	padding-left: 5px;
+}
+
+#level p{
+}
+
+#title p{
+	color: #a26fbc;
+	font-weight: bold;
+}
+
 #user-rank{
 	padding: 10px 0px;
 	float: left;
 	display: block;
 	width: 150px;
 	border-right: 1px solid #D7D7D7;
-	height: 280px;
+	height: 198px;
 	background: -webkit-linear-gradient(top,rgba(0, 0, 0, .03),rgba(0, 0, 0, .01) 90%,transparent 100%) no-repeat;
 }
 
 #user-stats{
 	float: right;
 	display: block;
-	width: 320px;
+	width: 420px;
 	padding: 10px 0px;
 }
 
@@ -139,6 +174,65 @@ a:hover, a:active{
 	margin: 0px;
 	padding: 5px 0px;
 	border-bottom: 1px solid #D7D7D7;
+}
+
+#superlatives{
+	margin: 10px 0px;
+	padding: 0px;
+}
+
+#superlatives li{
+	list-style: none;
+	float: left;
+	width: 150px;
+	padding: 10px 0px;
+	text-align: left;
+	font-family: "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+	font-size: 18px;
+}
+
+#superlatives li img{
+	padding-right: 5px;
+}
+
+#user-story{
+	clear: both;
+	width: 590px;
+	text-align: center;
+	padding: 10px 0px;
+	margin: 0px;
+	border-top: 1px solid #D7D7D7;
+	border-bottom: 1px solid #D7D7D7;
+}
+
+
+#story-body{
+	padding: 15px;
+	margin: 0px;
+	line-height: 1.5;
+	font-family: 'Quintessential', cursive;
+	background-color: #FFF18C;
+}
+
+
+#story-body:first-letter { 
+	font-size: 36px; 
+	padding: 50px 5px 0px 0px;
+	line-height: 25px;
+}
+
+/* EXPORTED */
+
+#exported{
+	display: none;
+	width: 600px;
+	min-height: 150px;
+}
+
+#exported h3{
+	margin: auto auto;
+	padding: 15px 5px;
+	text-align: center;
 }
 
 /* BUTTONS */
@@ -172,7 +266,7 @@ a:hover, a:active{
 
 #export-data{
 	padding: 7px 10px;
-	margin: 10px 0px 0px 10px;
+	margin: 10px 0px;
 	cursor: pointer;
 	background-color: #5791BB;
 	color: white;
