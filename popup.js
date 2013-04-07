@@ -4,13 +4,10 @@ $(document).ready(function() {
 
 /*
   $('body').click(function(e){
-    alert(bkg.getId());
-    alert(bkg.getUser());
   });
 */
 
 //	var tracking = localStorage.startedTracking;
-//	alert(tracking);
 
 //	if (tracking){
 //		$('#start').css('display', 'none');
@@ -90,6 +87,17 @@ $(document).ready(function() {
 
   $('body').click(function(e){
 
+    foodiness = bkg.getFoodiness();
+    $('#foodiness').html("Foodiness " + foodiness.toString());
+    cattiness = bkg.getCattiness(); 
+    $('#cattiness').html("Cattiness " + cattiness.toString());
+    intellectual = bkg.getIntellectual();
+    $('#intellectual').html("Intellectual " + intellectual.toString());
+    hipsterness = bkg.getHipsterness();
+    $('#hipsterness').html("Hipsterness " + hipsterness.toString());
+
+
+
     id = bkg.getId(); 
     user = bkg.getUser();
     search = bkg.getSearch();
@@ -97,7 +105,6 @@ $(document).ready(function() {
     // get the pair of id and user name. use the pair to make ajax requests to API 
     // and get back tags. Also get search terms and use them as well.
     for(var i = 0; i < id.length; i++){
-      alert("The " + (i+1) + " post has id " + id[i] + " and user: " + user[i]);
       if(id[i] == 47360923253){
         tag.push("foodiness");
       }
@@ -159,37 +166,39 @@ $(document).ready(function() {
         tag.push("intellectual");
       }
       delete(id[i]);
-      alert(tag);
      }
 
     for(var i = 0; i < search.length; i++){
-      alert("The " + (i+1) + " search term is " + search[i]);
     }
 
     // Once you get tags then convert them to point values
     // i.e. psuedocode:
     for(var i = 0; i < tag.length; i++){
       if(tag[i] === "foodiness"){
-        foodiness += 5;
-        alert("foodiness is " + foodiness);
+        foodiness = bkg.getFoodiness();
+        foodiness += 5
+        bkg.setFoodiness(foodiness);
         $('#foodiness').html("Foodiness " + foodiness.toString());
         delete(tag[i]);
       }
       if(tag[i] === "cattiness"){
+        cattiness = bkg.getCattiness(); 
         cattiness += 8;
-        alert("cattiness is " + cattiness);
+        bkg.setCattiness(cattiness);
         $('#cattiness').html("Cattiness " + cattiness.toString());
         delete(tag[i]);
       }
       if(tag[i] === "intellectual"){
+        intellectual = bkg.getIntellectual();
         intellectual += 7;
-        alert("intellectual is " + intellectual);
+        bkg.setIntellectual(intellectual);
         $('#intellectual').html("Intellectual " + intellectual.toString());
         delete(tag[i]);
       }
       if(tag[i] === "hipsterness"){
+        hipsterness = bkg.getHipsterness();
         hipsterness += 4;
-        alert("hipsterness is " + hipsterness);
+        bkg.setHipsterness(hipsterness);
         $('#hipsterness').html("Hipsterness " + hipsterness.toString());
         delete(tag[i]);
       }
