@@ -12,7 +12,7 @@
 
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
+      "matches": ["http://www.tumblr.com/*", "https://www.tumblr.com/*"],
       "js": ["jquery-1.9.1.min.js", "contentscript.js", "bootstrap.min.js"]
     }
   ],

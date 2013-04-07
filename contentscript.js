@@ -7,6 +7,9 @@ $(document).ready(function() {
     alert(id);
     var user = $('#post_'+id+ ' .reblog_button').attr('data-tumblelog-name');
     alert(user);
+
+    chrome.extension.sendMessage({"id" : id, "user": user});
+
   });
 
   // clicking reblog button
