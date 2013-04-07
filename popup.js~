@@ -2,11 +2,12 @@ $(document).ready(function() {
   // get background page
   //var bkg = chrome.extension.getBackgroundPage();
 
-
+/*
   $('body').click(function(e){
     alert(bkg.getId());
     alert(bkg.getUser());
   });
+*/
 
 //	var tracking = localStorage.startedTracking;
 //	alert(tracking);
@@ -19,12 +20,30 @@ $(document).ready(function() {
 	var tracking = chrome.extension.getBackgroundPage().isTracking;
 
 
-if (tracking){
+	if (tracking){
 		$('#start').css('display', 'none');
 		$('#stats').css('display', 'block');
-	}	
+	}
+
+	//gets user avatars and shit
+	$('#submit-text').click(function(){
+		var textData = document.getElementById('text-data').value;
+		chrome.extension.getBackgroundPage().username = textData;
+		var avatar = 'http:/api.tumblr.com/v2/blog/' + textData + '.tumblr.com/avatar';
+		var imgtag = "	<img class='avatar' src=" + avatar + "/>";
+		$('#start').prepend(imgtag);
+		$('#start').prepend("<h3 class='username'>" + textData + "</h3>");
+		$('#login').fadeOut(500, function(){ });
+		$('#start').delay(600).fadeIn(500);
+	});
+	
 	//fade-in and out of UI dashboards
   $('#start-tracking').click(function(){
+		var username = chrome.extension.getBackgroundPage().username;
+		var avatar = 'http:/api.tumblr.com/v2/blog/' + username + '.tumblr.com/avatar';
+		var imgtag = "	<img class='avatar' src=" + avatar + "/>";
+		$('#stats').prepend(imgtag);
+		$('#stats').prepend("<h3 class='username'>" + username + "</h3>"); 
 		$('#start').fadeOut(500, function(){ });
 		$('#stats').delay(600).fadeIn(500);
 		chrome.extension.getBackgroundPage().isTracking = true;
@@ -34,6 +53,7 @@ if (tracking){
   $('#export-data').click(function(){
 		$('#stats').fadeOut(500, function(){ });
 		$('#exported').delay(600).fadeIn(500);
+		chrome.extension.getBackgroundPage().isTracking = false;
 	});
 
 	//renders user story on #stats and #exported

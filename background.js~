@@ -21,24 +21,8 @@ chrome.extension.onMessage.addListener(
       }
 )
 
-// React when a browser action's icon is clicked.
-/*
-chrome.extension.onClicked.addListener(function(tab) {
-  var viewTabUrl = chrome.extension.getURL('popup.html');
-  alert(viewTabUrl);
-
-}); */
 
 
-var isTracking = false;
-
-/*
-
-var popups = chrome.extension.getViews({type: "popup"});
-if (popups.length != 0) {
-  var popup = popups[0];
-  popup.isTracking();
-} */
 
 // functions to access variables from the popup.js page
 function getId(){
@@ -52,3 +36,11 @@ function getUser(){
 function getSearch(){
   return search;
 }
+
+var isTracking = false;
+
+//for getting user icons and shit		
+//var avatar = $(this)[0].innerHTML;
+  //console.log($(this));
+ // var link = html.match(/href="([^']+)"/)[1];
+ // console.log(link);

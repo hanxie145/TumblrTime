@@ -36,7 +36,6 @@
 	<div id="stats">
 	
 		<div id="user-rank">
-
 			<span id="level"><img src="images/star.png" width="20"/><p>Level 5</p></span>
 			<span id="title"><img src="images/heart.png" width="20"/><p>Cat-Lover</p></span>
 		</div><!--user-rank-->
