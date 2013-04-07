@@ -2,10 +2,13 @@
 
 
 body {
-	min-width: 600px;
-	min-height: 200px;
+	min-width: 500px;
+	min-height: 300px;
 	overflow-x: hidden;
 	background-color: #2C4762;
+	border: 5px solid #fff;
+	margin: 0px;
+	padding: 0px;
 }
 
 
@@ -13,6 +16,7 @@ body {
 
 h1, h2, h3, h4, h5, h6, p{
 	font-family: "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+	color: #444;
 }
 
 a {
@@ -24,11 +28,11 @@ a:hover, a:active{
 	text-decoration: none; 
 }
 
-/*LAYOUT & MAIN STYLES */
+/****LAYOUT & MAIN STYLES ****/
 
 #content{
-	width: 200px;
-	margin: 10% auto;
+
+	margin: 10px auto;
 	padding: 10px;
 }
 
@@ -38,35 +42,109 @@ a:hover, a:active{
 	margin: 5px 0px;
 }
 
-#start{
+/* STARTING PAGE */
+
+#start, #stats{
 	background-color: white;
-	display: block;
-	padding: 10px;
+	padding: 0px;
 	-webkit-border-radius: 6px;
 	-moz-border-radius: 6px;
 	border-radius: 6px;
 	margin: auto;
 }
 
-#stats{
-	display: none;
+#start{
+	display: block;
+	width: 200px;
+	min-height: 150px;
+	padding: 10px 0px;
 }
 
+/*avatar for both #start and #stats */
 #avatar{
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	clear: both;
-	float: none;
-	margin: 5px auto;
 	padding: 5px;
 	display: block;
+}
+
+#start #avatar{
+	float: none;
+	clear: both;
+	margin: 5px auto;
+}
+
+
+/* STATS PAGE */
+
+#stats #avatar{
+	float: left;
+	clear: both;
+	margin: 0px 0px 5px 10px;
+}
+
+#stats{
+	display: none;
+	width: 500px;
+	min-height: 300px;
+}
+
+#username{
+	float: left;
+	clear: both;
+	margin: 0px;
+	padding: 5px 0px 10px 10px;
+	border-bottom: 1px solid #D7D7D7;
+	width: 140px;
+}
+
+#title, #level{
+	padding: 10px 0px 10px 10px;
+	float: left;
+	clear: both;
+	width: 140px;
+	margin: 0;
+	background-color: #CFCFCF;
+	border-right: 1px solid rgba(0, 0, 0, 0.16);
+	-webkit-box-shadow: 0px 0px 3px rgba(177, 177, 177, 0.16) inset;
+ 	box-shadow: 0px 0px 3px rgba(177, 177, 177, 0.16) inset;
+}
+
+#title{
+	border-bottom: 1px solid #D7D7D7;
+	width: 140px;
+}
+
+#user-rank{
+	padding: 10px 0px;
+	float: left;
+	display: block;
+	width: 150px;
+	border-right: 1px solid #D7D7D7;
+	height: 280px;
+	background: -webkit-linear-gradient(top,rgba(0, 0, 0, .03),rgba(0, 0, 0, .01) 90%,transparent 100%) no-repeat;
+}
+
+#user-stats{
+	float: right;
+	display: block;
+	width: 320px;
+	padding: 10px 0px;
+}
+
+#user-stats h2{
+	text-align: left;
+	margin: 0px;
+	padding: 5px 0px;
+	border-bottom: 1px solid #D7D7D7;
 }
 
 /* BUTTONS */
 
 #start-tracking{
-	padding: 10px 10px;
+	padding: 7px 10px;
 	cursor: pointer;
 	background-color: #44b57d;
 	color: white;
@@ -76,13 +154,13 @@ a:hover, a:active{
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.32);
 	text-decoration: none;
 	-webkit-font-smoothing: antialiased;
-	-webkit-border-radius: 6px;
-	-moz-border-radius: 6px;
-	border-radius: 6px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
 	border: 1px solid #359968;
 	clear: both;
 	display: block;
-	margin: auto;
+	margin: 5px auto;
 	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#44B57D),color-stop(100%,#359968));
 }
 
@@ -90,5 +168,33 @@ a:hover, a:active{
 	position: relative;
 	top: 2px;
 	background: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#3A996A),color-stop(100%,#277951));
+}
+
+#export-data{
+	padding: 7px 10px;
+	margin: 10px 0px 0px 10px;
+	cursor: pointer;
+	background-color: #5791BB;
+	color: white;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: bold;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.32);
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	border: 1px solid #5791BB;
+	clear: both;
+	display: block;
+	float: left;
+	background: -webkit-linear-gradient(top,#6AA5CF 0,#5791BB 100%);
+}
+
+#export-data:hover, #export-data:active{
+	position: relative;
+	top: 2px;
+	background: -webkit-linear-gradient(top,#548EB8 0,#497CA2 100%);
 }
 
