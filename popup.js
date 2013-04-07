@@ -60,11 +60,19 @@ $(document).ready(function() {
 	});
 
 	//renders user story on #stats and #exported
-  var story = "<div id='story'><h2 id='user-story'>Your Story</h2><p id='story-body'>Once, there was a tumblr user called <b id=username>USERNAME</b> who decided to go on a/n TOP_TAG adventure. First, they visited the city FIRST_TAG where they wandered the streets and bought equipment. Then, they found that there was trouble in FIRST_TAG - the evil SECOND_TAG was destroying all of the FIRST_TAG_STUFF. USERNAME vowed to save the city and rode out to fight SECOND_TAG. THIRD_TAG. With the powers of HIGHEST_STAT and FOURTH_TAG, USERNAME and THIRD_TAG took down SECOND_TAG and saved FIRST_TAG.</p></div><!--story-->";
+  var storyhead = "<div id='story'><h2 id='user-story'>Your Story</h2><p id='story-body'>";
+  var story1 = "Once, there was a tumblr user called " + username;
+  var story2 = " who decided to go on a " + TOP_TAG + " adventure.";
+  var story3 = " First, they visited the city " + FIRST_TAG;
+  var story4 = " where they wandered the streets and bought equipment. Then, they found that there was trouble in " + FIRST_TAG;
+  var story5 = " - the evil " + SECOND_TAG + " was destroying all of the " + FIRST_TAG_STUFF;
+  var story6 = ". " + username[0].toUpperCase() + username.slice(1) + " vowed to save the city and rode out to fight " + SECOND_TAG; 
+  var story7 = ". " + THIRD_TAG[0].toUpperCase() + THIRD_TAG.slice(1) + ", With the powers of " + HIGHEST_STAT + " and " + FOURTH_TAG;
+  var story8 = ", " + username + " and " + THIRD_TAG + " took down " + SECOND_TAG + " and saved " + FIRST_TAG + "."
+  var storytail = "</p></div><!--story-->";
 
-
-  $('#stats').append(story);
-  $('#exported').append(story);
+  var story = storyhead + story1 + story2 + story3 + story4 + story5 + story6 + story7 + story8 + storytail;
+ /* var story = "Once, there was a tumblr user called USERNAME who decided to go on a/n TOP_TAG adventure. First, they visited the city FIRST_TAG where they wandered the streets and bought equipment. Then, they found that there was trouble in FIRST_TAG - the evil SECOND_TAG was destroying all of the FIRST_TAG_STUFF. USERNAME vowed to save the city and rode out to fight SECOND_TAG. THIRD_TAG, With the powers of HIGHEST_STAT and FOURTH_TAG, USERNAME and THIRD_TAG took down SECOND_TAG and saved FIRST_TAG.</p></div><!--story-->"; */
 
 });
 
