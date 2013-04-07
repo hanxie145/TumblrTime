@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="style/custom.css">
     <script src = "jquery-1.9.1.min.js"></script>
     <script src="popup.js"></script>
+    <script src = "localstorage.js"></script>
 
 	<link href='http://fonts.googleapis.com/css?family=Quintessential' rel='stylesheet' type='text/css'>
 
@@ -44,10 +45,10 @@
 		<div id="user-stats">
 			<h2>Stats</h2>
 			<ul id="superlatives">
-				<li><img src="images/check.png" width="20">Cattiness</li>
-				<li><img src="images/check.png" width="20">Foodiness</li>
-				<li><img src="images/check.png" width="20">Intellectual</li>
-				<li><img src="images/check.png" width="20">Hipsterness</li>
+				<li id = "cattiness">Cattiness</li>
+				<li id = "foodiness">Foodiness</li>
+				<li id = "intellectual">Intellectual</li>
+				<li id = "hipsterness">Hipsterness</li>
 				<button id="export-data">export!</button>
 			</ul><!--superlatives-->
 		</div><!--user-stats-->

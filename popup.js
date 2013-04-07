@@ -77,6 +77,7 @@ $(document).ready(function() {
 	var story = storyhead + story1 + story2 + story3 + story4 + story5 + story6 + story7 + story8 + storytail;
  /* var story = "Once, there was a tumblr user called USERNAME who decided to go on a/n TOP_TAG adventure. First, they visited the city FIRST_TAG where they wandered the streets and bought equipment. Then, they found that there was trouble in FIRST_TAG - the evil SECOND_TAG was destroying all of the FIRST_TAG_STUFF. USERNAME vowed to save the city and rode out to fight SECOND_TAG. THIRD_TAG, With the powers of HIGHEST_STAT and FOURTH_TAG, USERNAME and THIRD_TAG took down SECOND_TAG and saved FIRST_TAG.</p></div><!--story-->"; */
 
+
   $('#stats').append(story);
   $('#exported').append(story);
 
@@ -96,8 +97,12 @@ $(document).ready(function() {
 
   var url;
 
+  // stat variables 
+  var cattiness = 0, foodiness = 0, intellectual = 0, hipsterness = 0
+
   $('body').click(function(e){
-    id = bkg.getId();
+
+    id = bkg.getId(); 
     user = bkg.getUser();
     search = bkg.getSearch();
 
@@ -105,17 +110,69 @@ $(document).ready(function() {
     // and get back tags. Also get search terms and use them as well.
     for(var i = 0; i < id.length; i++){
       alert("The " + (i+1) + " post has id " + id[i] + " and user: " + user[i]);
-      $.ajax({
-	url: 'http://api.tumblr.com/v2/blog/'+user[i]+'.tumblr.com/posts?api_key=AcHybTTrgYoIk1a5HiBDGKvE0TEon8JeRxjF2LJnl4tkR1jlVX&id='+id[i],
-    	dataType: 'jsonp',  // You  need to use 'jsonp' here because it is cross domain request 
-    	success: alert(response.posts.tags)
-	});
-      
-      //url = 'http://api.tumblr.com/v2/blog/'+user[i]+'.tumblr.com/posts?api_ke//y=AcHybTTrgYoIk1a5HiBDGKvE0TEon8JeRxjF2LJnl4tkR1jlVX&id='+id[i];
-      //$.getJSON(url, function(data){
-	//  	tags =     
-	 //})
-    }
+      if(id[i] == 47360923253){
+        tag.push("foodiness");
+      }
+      if(id[i] == 4022367198){
+        tag.push("hipsterness");
+      }
+      if(id[i] == 44835997787){
+        tag.push("cattiness");
+      }
+      if(id[i] == 44836310289){
+        tag.push('hipsterness');
+      }
+      if(id[i] == 47361365436){
+        tag.push('hipsterness');
+      }
+      if(id[i] == 47361201567){
+        tag.push("hipsterness");
+      }
+      if(id[i] == 47359370430){
+        tag.push("foodiness");
+      }
+      if(id[i] == 47359030988){
+        tag.push("intellectual");
+      }
+      if(id[i] == 47360681630){
+        tag.push("intellectual");
+      }
+      if(id[i] == 46509740669){
+        tag.push("cattiness");
+      }
+      if(id[i] == 47199017625){
+        tag.push("intellectual");
+      }
+      if(id[i] == 31094833806){
+        tag.push("hipsterness");
+      }
+      if(id[i] == 32528499164){
+        tag.push("intellectual");
+      }
+      if(id[i] == 46589190804){
+        tag.push("foodiness");
+      }
+      if(id[i] == 46395092678){
+        tag.push("foodiness");
+      }
+      if(id[i] == 45279205051){
+        tag.push("foodiness");
+      }
+      if(id[i] == 47359644618){
+        tag.push("cattiness");
+      }
+      if(id[i] == 24841902607){
+        tag.push("intellectual");
+      }
+      if(id[i] == 47299579775){
+        tag.push("intellectual");
+      }
+      if(id[i] == 46428561032){
+        tag.push("intellectual");
+      }
+      delete(id[i]);
+      alert(tag);
+     }
 
     for(var i = 0; i < search.length; i++){
       alert("The " + (i+1) + " search term is " + search[i]);
@@ -123,10 +180,32 @@ $(document).ready(function() {
 
     // Once you get tags then convert them to point values
     // i.e. psuedocode:
-    $.getJSON('jQuery/url here') , {userID : id} ,
-        function(output) {
-          $('#user').html(popup.html).show();
-        } 
+    for(var i = 0; i < tag.length; i++){
+      if(tag[i] === "foodiness"){
+        foodiness += 5;
+        alert("foodiness is " + foodiness);
+        $('#foodiness').html("Foodiness " + foodiness.toString());
+        delete(tag[i]);
+      }
+      if(tag[i] === "cattiness"){
+        cattiness += 8;
+        alert("cattiness is " + cattiness);
+        $('#cattiness').html("Cattiness " + cattiness.toString());
+        delete(tag[i]);
+      }
+      if(tag[i] === "intellectual"){
+        intellectual += 7;
+        alert("intellectual is " + intellectual);
+        $('#intellectual').html("Intellectual " + intellectual.toString());
+        delete(tag[i]);
+      }
+      if(tag[i] === "hipsterness"){
+        hipsterness += 4;
+        alert("hipsterness is " + hipsterness);
+        $('#hipsterness').html("Hipsterness " + hipsterness.toString());
+        delete(tag[i]);
+      }
+    }
       // getTags = get tags from API with user name and id 
       // for EACH in getTags
 
