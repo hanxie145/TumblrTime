@@ -21,8 +21,13 @@ $(document).ready(function() {
 
 
 	if (tracking){
+		$('#login').css('display', 'none');
 		$('#start').css('display', 'none');
 		$('#stats').css('display', 'block');
+		var username = chrome.extension.getBackgroundPage().username;
+		var avatar = 'http:/api.tumblr.com/v2/blog/' + username + '.tumblr.com/avatar';
+		var imgtag = "	<img class='avatar' src=" + avatar + "/>";
+		$('#user-rank').prepend(imgtag);
 	}
 
 	//gets user avatars and shit
@@ -42,8 +47,8 @@ $(document).ready(function() {
 		var username = chrome.extension.getBackgroundPage().username;
 		var avatar = 'http:/api.tumblr.com/v2/blog/' + username + '.tumblr.com/avatar';
 		var imgtag = "	<img class='avatar' src=" + avatar + "/>";
-		$('#stats').prepend(imgtag);
-		$('#stats').prepend("<h3 class='username'>" + username + "</h3>"); 
+		$('#user-rank').prepend(imgtag);
+		$('#user-rank').prepend("<h3 class='username'>" + username + "</h3>"); 
 		$('#start').fadeOut(500, function(){ });
 		$('#stats').delay(600).fadeIn(500);
 		chrome.extension.getBackgroundPage().isTracking = true;

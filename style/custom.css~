@@ -146,7 +146,7 @@ header{
 }
 
 #user-rank .username{
-	font-size: 18px;
+	font-size: 14px;
 	float: left;
 	clear: both;
 	margin: 0px;
@@ -200,7 +200,7 @@ header{
 	display: block;
 	width: 150px;
 	border-right: 1px solid #D7D7D7;
-	height: 198px;
+	height: 190px;
 	background: -webkit-linear-gradient(top,rgba(0, 0, 0, .03),rgba(0, 0, 0, .01) 90%,transparent 100%) no-repeat;
 }
 

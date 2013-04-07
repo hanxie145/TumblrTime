@@ -37,10 +37,10 @@ function getSearch(){
   return search;
 }
 
+
+//makes sure user is on the right page
 var isTracking = false;
 
-//for getting user icons and shit		
-//var avatar = $(this)[0].innerHTML;
-  //console.log($(this));
- // var link = html.match(/href="([^']+)"/)[1];
- // console.log(link);
+//var for username
+var username = '';
+

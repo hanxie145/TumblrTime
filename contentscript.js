@@ -19,15 +19,16 @@ $(document).ready(function() {
 
   // clicking reblog button
   $('a.post_control.reblog_button').click(function(e){
-    alert("clicked reblog button");
+    //alert("clicked reblog button");
+	
 
     // get the id of the reblog
     var id = $(this).attr('data-reblog-id');
-    alert(id);
+    //alert(id);
 
     // get the user
     var user = $(this).attr('data-tumblelog-name');
-    alert(user);
+    //alert(user);
 
     // send the info to the background page, where it will be parsed and passed
     // onto the chrome extension

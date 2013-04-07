@@ -41,6 +41,9 @@ function getSearch(){
 //makes sure user is on the right page
 var isTracking = false;
 
-//var for username
+//variable for username
 var username = '';
+
+//counter for likes;
+var likes = 0;
 

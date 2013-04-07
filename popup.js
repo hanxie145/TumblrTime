@@ -21,8 +21,14 @@ $(document).ready(function() {
 
 
 	if (tracking){
+		$('#login').css('display', 'none');
 		$('#start').css('display', 'none');
 		$('#stats').css('display', 'block');
+		var username = chrome.extension.getBackgroundPage().username;
+		var avatar = 'http:/api.tumblr.com/v2/blog/' + username + '.tumblr.com/avatar';
+		var imgtag = "	<img class='avatar' src=" + avatar + "/>";
+		$('#user-rank').prepend(imgtag);
+		$('#user-rank').prepend("<h3 class='username'>" + username + "</h3>"); 
 	}
 
 	//gets user avatars and shit
