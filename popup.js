@@ -42,8 +42,8 @@ $(document).ready(function() {
 		var username = chrome.extension.getBackgroundPage().username;
 		var avatar = 'http:/api.tumblr.com/v2/blog/' + username + '.tumblr.com/avatar';
 		var imgtag = "	<img class='avatar' src=" + avatar + "/>";
-		$('#stats').prepend("<h3 class='username'>" + username + "</h3>"); 
-		$('#stats').prepend(imgtag);
+		$('#user-rank').prepend(imgtag);
+		$('#user-rank').prepend("<h3 class='username'>" + username + "</h3>"); 
 		$('#start').fadeOut(500, function(){ });
 		$('#stats').delay(600).fadeIn(500);
 		chrome.extension.getBackgroundPage().isTracking = true;

@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="style/custom.css">
     <script src = "jquery-1.9.1.min.js"></script>
     <script src="popup.js"></script>
+    <script src = "localstorage.js></script>
 
 	<link href='http://fonts.googleapis.com/css?family=Quintessential' rel='stylesheet' type='text/css'>
 
@@ -36,6 +37,7 @@
 	<div id="stats">
 	
 		<div id="user-rank">
+
 			<span id="level"><img src="images/star.png" width="20"/><p>Level 5</p></span>
 			<span id="title"><img src="images/heart.png" width="20"/><p>Cat-Lover</p></span>
 		</div><!--user-rank-->

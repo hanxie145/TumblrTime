@@ -146,6 +146,7 @@ header{
 }
 
 #user-rank .username{
+	font-size: 18px;
 	float: left;
 	clear: both;
 	margin: 0px;
